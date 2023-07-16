@@ -13,8 +13,9 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    background-color: #dfe4ec;
-    background-image: linear-gradient(to right, #fc5c7d, #6a82fb);
+   
+    background: linear-gradient(to right, rgb(182, 244, 146), rgb(51, 139, 147));
+
     width: 100%;
     height: 150px;
     border-radius: 10px 10px 0 0;
@@ -24,7 +25,6 @@
 .home__title {
     width: 100%;
     height: 70%;
-    /* background-color: #6a82fb; */
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -41,34 +41,10 @@
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
-    /* background-color: #fc5c7d; */
-}
-/* .home__add__button button {
-    width: 100px;
-    height: 40px;
-    background-color: #6a82fb;
-    border-radius: 10px;
-    border: none;
-    box-shadow: 1px 1px 10px 1px lightgray;
-    cursor: pointer;
-} */
-/* .home__add__button button:hover {
-    background-color: rgb(106, 130, 251, .8);
-} */
-
-.genral__btn {
-    width: 40px;
-    height: 40px;
-    /* background-color: #6a82fb; */
-    border-radius: 10px;
-    border: none;
-    box-shadow: 1px 1px 10px 1px lightgray;
-    cursor: pointer;
 }
 
 .home__list {
     width: 800px;
     box-shadow: 1px 1px 10px 1px lightgray;
     border-radius: 10px;
-
 }

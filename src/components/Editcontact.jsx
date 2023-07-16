@@ -1,25 +1,22 @@
 import React from 'react';
 import ContactForm from '../components/ContactForm';
+import { Button } from './Button';
 import { useState,useEffect } from 'react';
 import { useNavigate,useParams } from 'react-router-dom';
 import axios from "axios";
-import { Button } from '../components/Button';
-
 const CONTACTS_API = "http://localhost:3000/contacts";
 
-const EditContact = () => {
+export const Editcontact = () => {
+
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(false)
     const [contact, setContact] = useState({ name: "", number: ""  });
     const [isSaved, setIsSaved] = useState()
     const { name, number } = contact;
-    const navigate = useNavigate();
     const params = useParams();
 
   
-    const handleClick = () => {
-        navigate("/");
-      };
+    
   
       useEffect(() => {
         const getContact = async () => {
@@ -67,7 +64,7 @@ const EditContact = () => {
         const EditContact={...contact,name,number}
         await axios.put(`${CONTACTS_API}/${params.id}`, EditContact);
         setIsLoading(false);
-        setIsSaved("modificaton saved");
+        setIsSaved("modification saved");
         
         
       } catch (error) {
@@ -80,7 +77,7 @@ const EditContact = () => {
   
     if (isLoading) {
       return (
-        <div>
+        <div className='contact__caption'>
           Loading ...
         </div>
       )
@@ -88,19 +85,19 @@ const EditContact = () => {
   
     if(error) {
       return (<>
-        <div>
+        <div className='contact__caption'>
           There is an error in loading API...
         </div>
           <div>Please refresh the page</div>
           </>
       )
     }
-  
-  
+
     return (
-      <div>
-        <form onSubmit={handleSubmit}>
-          <div>
+        <div>
+            <form onSubmit={handleSubmit}>
+          <div className='newcontact__input'>
+          <img className="icon" src="../src/images/newuser-icon.png"></img>
             <input
               placeholder="name"
               type="text"
@@ -109,7 +106,8 @@ const EditContact = () => {
               onChange={handleChange}
             />
           </div>
-          <div>
+          <div className='newcontact__input'>
+          <img className="icon" src="../src/images/newphone-icon.png"></img>
             <input
               placeholder="phone number"
               type="tel"
@@ -119,18 +117,16 @@ const EditContact = () => {
             />
           </div>
           <div>
-<label >{isSaved}</label>
+            <div className='label__modify'>
+            <label >{isSaved}</label>
+            </div>
+            <div className="newcontact__btn">
             <Button btnText='edit' > </Button>
-
+            </div>
           </div>
         </form>
-        <Button btnText='Back to Contacts list' clickHandler={handleClick}> </Button>
-
-      </div>
+        
+        </div>
     );
-  };
-  
- 
-  
+};
 
-export default EditContact;

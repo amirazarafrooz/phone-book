@@ -53,7 +53,7 @@ const ContactList = () => {
 
   if (isLoading) {
     return (
-      <div>
+      <div className="contact__caption">
         Loading ...
       </div>
     )
@@ -61,7 +61,7 @@ const ContactList = () => {
 
   if(error) {
     return (<>
-      <div>
+      <div className="contact__caption">
         There is an error in loading API...
       </div>
         <div>Please refresh the page</div>
@@ -71,7 +71,7 @@ const ContactList = () => {
 
   if (contacts.length===0) {
     return (
-      <div>
+      <div className="contact__caption"> 
         No user
       </div>
     )
@@ -82,15 +82,18 @@ const ContactList = () => {
 
   return (
     <>
-    <div>
+    <div >
       {contacts.map(({ id, name, number }) => (
-        <div> 
+        <div className="contact__container"> 
+        <div className="contact__bookmark"></div>
+        <div>
         <Contact path={id} key={id} name={name} number={number}>  </Contact>
-        
+        </div>
+        <div className="contact__action__btn">
+        <Button btnText={<img className="icon" src="../src/images/edit-icon.png"></img>} cssClass="icon__btn" clickHandler={()=>{editHandler(id)}}></Button>
 
-        <Button btnText='❌' clickHandler={()=>{deleteHandler(id)}}> </Button>
-        <Button btnText='✏️' clickHandler={()=>{editHandler(id)}}> </Button>
-        
+        <Button btnText={<img className="icon" src="../src/images/bin-icon.png"></img>} cssClass="icon__btn" clickHandler={()=>{deleteHandler(id)}}>  </Button>
+        </div>
        
         </div>
         

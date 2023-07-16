@@ -1,4 +1,3 @@
-import "../css/contact.css"
 import { useNavigate } from "react-router-dom";
 
 const Contact = ({ name, number ,path}) => {
@@ -10,8 +9,8 @@ const Contact = ({ name, number ,path}) => {
   return (
    
     <div onClick={clickContact} className="card">
-      <p>Name: {name} </p>
-      <p>Phone Number: {number}</p>
+      <p><img className="user__icon" src="../src/images/user-icon.png"/> {name} </p>
+      <p> <img className="user__icon" src="../src/images/phonenumber-icon.png"/> {number}</p>
     </div>
     
   );

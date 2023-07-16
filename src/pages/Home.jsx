@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import ContactList from "../components/ContactList";
-import "../css/home.css"
 import { Button } from "../components/Button";
 
 const Home = () => {
@@ -24,7 +23,7 @@ const Home = () => {
         <h1>Contact List</h1>
         </div>
       <div className="home__add__button">
-        <Button btnText='➕' clickHandler={handleClick}> </Button>
+        <Button btnText='➕' cssClass="general__btn" clickHandler={handleClick}> </Button>
         </div>
       </div>
       <div className="home__list__item">

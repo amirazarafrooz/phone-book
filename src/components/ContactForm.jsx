@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { Button } from "./Button";
 const CONTACTS_API = "http://localhost:3000/contacts";
+
 
 const ContactForm = () => {
 
@@ -42,7 +44,7 @@ const ContactForm = () => {
 
   if (isLoading) {
     return (
-      <div>
+      <div className="contact__caption" >
         Loading ...
       </div>
     )
@@ -50,7 +52,7 @@ const ContactForm = () => {
 
   if(error) {
     return (<>
-      <div>
+      <div className="contact__caption">
         There is an error in loading API...
       </div>
         <div>Please refresh the page</div>
@@ -62,7 +64,8 @@ const ContactForm = () => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className="newcontact__input">
+        <img className="icon" src="../src/images/newuser-icon.png"></img>
           <input
             placeholder="name"
             type="text"
@@ -71,7 +74,8 @@ const ContactForm = () => {
             onChange={handleChange}
           />
         </div>
-        <div>
+        <div className="newcontact__input">
+        <img className="icon" src="../src/images/newphone-icon.png"></img>
           <input
             placeholder="phone number"
             type="tel"
@@ -80,8 +84,9 @@ const ContactForm = () => {
             onChange={handleChange}
           />
         </div>
-        <div>
-          <button type="submit">Add</button>
+        <div className="newcontact__btn">
+
+          <Button btnText='Add' > </Button>
         </div>
       </form>
     </div>

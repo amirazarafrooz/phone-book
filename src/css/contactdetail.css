@@ -1,0 +1,40 @@
+.container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+.contactdetail__container {
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 1px 1px 10px 1px lightgray;
+    border-radius: 10px ;
+    overflow: hidden;
+    
+}
+
+.contactdetail__header {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    background: linear-gradient(to right, rgb(182, 244, 146), rgb(51, 139, 147));
+    width: 100%;
+    height: 150px;
+    border-radius: 10px 10px 0 0;
+    padding: 20px;
+}
+
+.contactdetail__body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
