@@ -32,9 +32,6 @@
     position: relative;
 }
 
-.newcontact__body {
-    height: 200px;
-}
 
  /* button */
 
@@ -50,6 +47,7 @@
     border: none;
     border-radius: 50%;
     cursor: pointer;
+
 }
 .newcontact__btn2 img {
     width: 30px;
