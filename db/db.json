@@ -1,11 +1,6 @@
 {
   "contacts": [
     {
-      "name": "Amir",
-      "number": "09212531702",
-      "id": 1
-    },
-    {
       "name": "saeed",
       "number": "09128483270",
       "id": 2
@@ -14,11 +9,6 @@
       "name": "sajad",
       "number": "09203546905",
       "id": 3
-    },
-    {
-      "name": "ziba",
-      "number": "09197146569",
-      "id": 4
     }
   ]
 }

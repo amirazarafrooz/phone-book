@@ -10,6 +10,7 @@ const ContactForm = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false)
   const [contact, setContact] = useState({ name: "", number: ""  });
+  const [isSaved, setIsSaved] = useState()
   const { name, number } = contact;
   const navigate = useNavigate();
 
@@ -23,15 +24,19 @@ const ContactForm = () => {
     e.preventDefault();
 
     if (name.trim() === "" || number.trim() === "") {
-      alert("All fields are required!");
+      // alert("All fields are required!");
+      setIsSaved("All fields are required!")
       return;
     }
 
     try {
       setIsLoading(true);
+      setIsSaved("false");
       await axios.post(CONTACTS_API, contact);
       setContact({ name: "", number: "" });
       setIsLoading(false);
+      // setIsSaved("modification saved");
+      setIsSaved(true);
       navigate("/");
 
     } catch (error) {
@@ -85,7 +90,9 @@ const ContactForm = () => {
           />
         </div>
         <div className="newcontact__btn">
-
+        <div className='label__modify'>
+            <label >{isSaved}</label>
+            </div>
           <Button btnText='Add' > </Button>
         </div>
       </form>
