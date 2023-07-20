@@ -1,6 +1,5 @@
 import React from "react";
-import {Img} from 'react-image'
-import backicon from "../images/back-icon.png"
+
 
 
 
@@ -15,7 +14,6 @@ export const ContactDetail = () => {
 
     
     <div className="container">
-      <Img src={backicon}></Img>
       <div className="contactdetail__container">
         <div className="contactdetail__header">
       <h1> Contact info </h1>
